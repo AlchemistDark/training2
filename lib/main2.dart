@@ -25,7 +25,7 @@ void main(){
   print(list.lenghtR());
   void susum() => 5 + 4;
   void boobool(arg) => arg > 40;
-  Function test = boobool;
+  list.BFuncOfInt test = susum;
   int? argo = list.firstWhere2(test);
   int intArgo = argo ?? 14;
   print("FirstWhere: $intArgo");

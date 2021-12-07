@@ -5,7 +5,7 @@ class _Record {
   _Record(this.value);                      // Конструктор.
 }
 
-typedef /*bool*/ BFuncOfInt(int? arg);      // Если вставить bool то где-то что-то ломается...
+typedef bool BFuncOfInt(int? arg);      // Если вставить bool то где-то что-то ломается...
 
 class SLList {
   _Record? root;
@@ -267,21 +267,15 @@ class SLList {
   ///
   /// Исправил функцию. Теперь сложность O(2n).
   /// По условию test не содержит циклов.
-  int? firstWhere2(Function test){
-    if (test is BFuncOfInt) {
-      int? n = 0;
-      _Record? rec = root;
-      int lng = lenghtR();                                              // Исправление.
-      while(rec != null){
-        if(test(rec.value)) return rec.value;
-        rec = rec.next;
-      }
-      return null;
+  int? firstWhere2(BFuncOfInt test){
+    int? n = 0;
+    _Record? rec = root;
+    int lng = lenghtR();                                              // Исправление.
+    while(rec != null){
+      if(test(rec.value)) return rec.value;
+      rec = rec.next;
     }
-    else{
-      print("F**k of Grandmuther");                                     // Ты просил по рукам бить ¯\_(ツ)_/¯
-      return null;
-    }
+    return null;
   }
   
   /// Переворачивает список.
@@ -340,6 +334,5 @@ class SLList {
       rec2 = rec1;
     }
   root = rec1;
-    
   }
 }
