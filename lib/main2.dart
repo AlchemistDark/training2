@@ -23,9 +23,9 @@ void main(){
   list.insertAt2(3, 717);
   list.printR();
   print(list.lenghtR());
-  void susum() => 5 + 4;
-  void boobool(arg) => arg > 40;
-  list.BFuncOfInt test = susum;
+  int susum() => 5 + 4;
+  bool boobool(int? arg) => arg == 717;
+  BFuncOfInt test = boobool;
   int? argo = list.firstWhere2(test);
   int intArgo = argo ?? 14;
   print("FirstWhere: $intArgo");

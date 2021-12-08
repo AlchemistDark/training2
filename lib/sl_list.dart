@@ -5,7 +5,7 @@ class _Record {
   _Record(this.value);                      // Конструктор.
 }
 
-typedef bool BFuncOfInt(int? arg);      // Если вставить bool то где-то что-то ломается...
+typedef BFuncOfInt(int? arg);      // Если вставить bool то где-то что-то ломается...
 
 class SLList {
   _Record? root;
