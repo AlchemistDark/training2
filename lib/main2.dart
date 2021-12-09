@@ -32,4 +32,4 @@ void main(){
   list.reverse();
   print("sdfs");
   list.printR();
-}
+}  

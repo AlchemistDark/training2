@@ -5,7 +5,7 @@ class _Record {
   _Record? next;                            // Указатель на следующую ячейку.
   _Record(this.value);                      // Конструктор.
 }
-
+  
 typedef bool BFuncOfInt(int? arg);      // Если вставить bool то где-то что-то ломается...
 
 class SLList {
