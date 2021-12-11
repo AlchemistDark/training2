@@ -1,4 +1,5 @@
-import 'package:meta/meta.dart';
+import 'package:meta/meta.dart';          
+// Мой транслятор на эту строчку ругается.
 
 class _Record {
   int? value;                               // Значение записи.
@@ -6,7 +7,7 @@ class _Record {
   _Record(this.value);                      // Конструктор.
 }
   
-typedef bool BFuncOfInt(int? arg);      // Если вставить bool то где-то что-то ломается...
+typedef bool BFuncOfInt(int? arg);          // Если вставить bool то где-то что-то ломается...
 
 class SLList {
   /// По идее, эта переменная должна быть приватной внутри класса.
@@ -18,23 +19,24 @@ class SLList {
   /// Мы оставляем тут эту аннотацию, чтобы пользователи класса знали, что это
   /// поле не для них, а для тестов. Анализатор будет показывать ошибки или
   /// предупреждения при попытке использовать такие поля и методы.
-  @visibleForTesting
+  @visibleForTesting                      
+// И на эту ругается.
   _Record? root;
 
   /// Добавляет элемент.
-  void addR(value){
+  void add(int value){
     final newrecord = _Record(value);
     if(root == null){
       root = newrecord;
     }
     else{
-      _Record? last = _lastR();
+      _Record? last = _last();
       last!.next = newrecord;
     }
   }
 
   /// Ищет последний элемент.
-  _Record? _lastR(){
+  _Record? _last(){
     _Record? rec = root;
     if(root == null){
       return null;
@@ -127,7 +129,7 @@ class SLList {
       return;
     };
     if(a == (lng)){                                // В этом случае переменная добавляется в конец списка.
-      addR(n);
+      add(n);
       return;
     };
     if((0 < a) && (a < lng)){                      // Индекс между другими элементами.
