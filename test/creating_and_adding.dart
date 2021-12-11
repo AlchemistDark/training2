@@ -9,12 +9,10 @@ main () {
     expect(list.root, isNull);
 
     // Проверим, что длина нулевая
-    expect(list.lenghtR(), equals(0));
+    expect(list.length, equals(0));
   });
 
   test("Adding makes length bigger", () {
 
   });
-
-
 }

@@ -50,7 +50,7 @@ class SLList {
   }
 
   /// Ищет длину списка.
-  int getter(){
+  int get length {
     int n = 0;
     _Record? rec = root;
     if(root == null){
@@ -69,7 +69,7 @@ class SLList {
   int? valueAt(int a){
     int? n = 0;
     _Record? rec = root;
-    if(a > getter()){
+    if(a > length){
       return null;
     }
     else{
@@ -84,7 +84,7 @@ class SLList {
   /// Заменяет число по индексу на другое.
  void replaceAt(int a, int n){
     _Record? rec = root;
-    if(a > getter()){
+    if(a > length){
       return;
     }
     else{
@@ -97,7 +97,7 @@ class SLList {
 
   /// Удалить число по индексу.
   void deletAt(int a){
-    int lng = getter();
+    int lng = length;
     if((a < 0) || (a > (lng-1)) || (root == null)){ // Удалять нечего.
       return;
     };
@@ -119,7 +119,7 @@ class SLList {
 
   /// Вставить число по индексу. a - индекс; n - value.
   void insertAt(int a, int n){
-    int lng = getter();
+    int lng = length;
     _Record? rec = root;
     final newrecord = _Record(n);
     if((a < 0) || (a > lng)){                      // Индекс не попадает в список.
@@ -150,7 +150,7 @@ class SLList {
   int? firstWhere(BFuncOfInt test){
     int? n = 0;
     _Record? rec = root;
-    int lng = getter();                             // Исправление.
+    int lng = length;                             // Исправление.
     while(rec != null){
       if(test(rec.value)) return rec.value;
       rec = rec.next;

@@ -8,14 +8,14 @@ void main(){
   list.add(3);
   list.add(100500);
   list.add(42);
-  print(list.getter());
+  print(list.length);
   int n = list.valueAt(3) ?? 111;
   print(n);
   list.replaceAt(3, 12345);
   list.deletAt(3);
-  print(list.getter());
+  print(list.length);
   list.insertAt(3, 717);
-  print(list.getter());
+  print(list.length);
   int susum() => 5 + 4;
   bool boobool(int? arg) => arg == 717;
   BFuncOfInt test = boobool;
