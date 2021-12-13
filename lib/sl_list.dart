@@ -50,7 +50,7 @@ class SLList {
   }
 
   /// Ищет длину списка.
-  int get length {
+  int get length {                // Здесь разве не нужны скобки?
     int n = 0;
     _Record? rec = root;
     if(root == null){
